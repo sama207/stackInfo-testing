@@ -2,6 +2,12 @@ describe('press show filter button ', () => {
   beforeEach(() => {
     cy.visit('https://stacksinfo.web.app');
   })
+
+  let numOfCompanies = 20
+  it('check if all companies appears immediately', () => { 
+    cy.get('.card').should('have.length', numOfCompanies)
+  }) 
+
   it(' check if the button text will change', () => { 
     cy.get('.filter-button').should('contain','Show Filters')
     cy.get('.filter-button').click()
@@ -63,15 +69,7 @@ describe('press backend -> c++ ->ASP.NET Core ', () => {
   //result length=2 (the companies that provide c++ is 2)  
   })
 })
-// describe('press backend btn', () => {
-//   it('display all companies or businesses that use alteast one backend stack', () => {
-//     cy.visit('https://stacksinfo.web.app')
-//     cy.get('.filter-button').click()
-//     cy.get('.dropdown-title').eq(0).get('')
-//   })
-// }) 
-
-
+ 
 describe('press backend then c++', () => {
   it('c++ checked', () => {
     cy.visit('https://stacksinfo.web.app')
@@ -83,3 +81,20 @@ describe('press backend then c++', () => {
   //result length=2 (the companies that provide c++ is 2)  
   })
 })
+
+
+describe('press backend then c++ test to modify', () => {
+  it('c++ checked', () => {
+    cy.visit('https://stacksinfo.web.app')
+    cy.get('.filter-button').click()
+    cy.get('svg.MuiSvgIcon-root[data-testid="KeyboardArrowDownIcon"]').eq(0).click();
+    cy.get('.filter-option').eq(0).get('[for="C++"]').click()
+    cy.get('.filter-option').eq(0).get('.PrivateSwitchBase-input').should('have.attr', 'data-indeterminate', 'true');
+    // Assuming your application sends a response, you can intercept the response using cy.i
+  })
+})
+
+
+
+
+ // cy.intercept('POST', '/searchAndFilter').as('getResponse');
