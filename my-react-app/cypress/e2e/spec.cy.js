@@ -26,7 +26,8 @@ describe('press backend -> c++ ->ASP.NET Core ', () => {
     cy.get('.filter-option').eq(0).get('.PrivateSwitchBase-input').should('have.attr', 'data-indeterminate', 'true');
     cy.get('.filter-option').eq(1).get('[for="ASP .NET Core"]').click()
     cy.get('.filter-option').eq(1).get('.PrivateSwitchBase-input').should('have.attr', 'data-indeterminate', 'true');
-
+  //ضل نتاكد انو ال
+  //result length=2 (the companies that provide c++ is 2)  
   })
 })
 // describe('press backend btn', () => {
