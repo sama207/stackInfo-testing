@@ -108,7 +108,6 @@ describe('Verify that selecting combinations of technologies display right compa
 })
 
 
-
 // describe('press backend then c++', () => {
 //   it('c++ checked', () => {
 //     cy.visit('https://stacksinfo.web.app')
