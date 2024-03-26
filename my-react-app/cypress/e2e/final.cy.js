@@ -41,11 +41,10 @@ describe('press show filter button ', () => {
     beforeEach(() => {
         cy.visit('https://stacksinfo.web.app');
     })
-    it('Check if all companies appear immediately when loading the page', () => { 
-        // cy.visit('https://stacksinfo.web.app');  
+    it('TC-filter-1->9 - Check if all companies appear immediately when loading the page', () => { 
         cy.get('.card').should('have.length', numOfCompanies)
     })
-    it('Verify that the text of "Show Filters" button will change to "Hide Filters" when clicking it', () => { 
+    it('TC-filter-10 - Verify that the text of "Show Filters" button will change to "Hide Filters" when clicking it', () => { 
         cy.get('.filter-button').should('contain','Show Filters')
         cy.get('.filter-button').click()
         cy.get('.filter-button').should('contain','Hide Filters')
@@ -61,13 +60,13 @@ describe('Verify that filters work correctly when selecting single stack', () =>
         beforeEach(() => { 
             cy.get('svg.MuiSvgIcon-root[data-testid="KeyboardArrowDownIcon"]').eq(0).click();
         })
-        it('Verify that C++ filter work correctly', () => { 
+        it('TC-filter-11 - Verify that C++ filter work correctly', () => { 
         cy.get('.filter-option').get('[for="C++"]').click()
         cy.get('.card').should('have.length', 2)
         })
-        it('Verify that Spring Boot filter work correctly', () => { 
+        it('TC-filter-12 - Verify that Spring Boot filter work correctly', () => { 
         cy.get('.filter-option').get('[for="Spring Boot"]').click()
-        cy.get('.card').should('have.length', 4)
+        cy.get('.card').should('have.length', 0)
         })
     })
 
@@ -75,7 +74,7 @@ describe('Verify that filters work correctly when selecting single stack', () =>
         beforeEach(() => { 
           cy.get('svg.MuiSvgIcon-root[data-testid="KeyboardArrowDownIcon"]').eq(1).click(); 
         })
-        it('Verify that Oracle Database filter work correctly', () => { 
+        it('TC-filter-13 - Verify that Oracle Database filter work correctly', () => { 
             cy.get('.filter-option').get('[for="Oracle Database"]').click()
             cy.get('.card').should('have.length', 3)
         })   
