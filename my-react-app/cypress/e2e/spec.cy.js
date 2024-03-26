@@ -75,9 +75,7 @@ describe("Testing AND Logic", () => {
     cy.get(".filter-option").get('[for="Angular"]').click();
     cy.get(".card").should("have.length", 1);
   }); 
-});
- 
-
+}); 
 describe('Verify that filters work correctly when selecting single Backend stack', () => {
   beforeEach(() => {
     cy.visit('https://stacksinfo.web.app');
@@ -92,8 +90,7 @@ describe('Verify that filters work correctly when selecting single Backend stack
     cy.get('.filter-option').get('[for="Spring Boot"]').click()
     cy.get('.card').should('have.length', 4)
   })
-})
-
+}) 
 describe('Verify that filters work correctly when selecting single DBA stack', () => {
   beforeEach(() => {
     cy.visit('https://stacksinfo.web.app');
@@ -104,8 +101,7 @@ describe('Verify that filters work correctly when selecting single DBA stack', (
       cy.get('.filter-option').get('[for="Oracle Database"]').click()
       cy.get('.card').should('have.length', 3)
   })   
-})
-
+}) 
 describe('Verify that each stack checkbox filter companies based technologies it contains', () => {
   beforeEach(() => {
     cy.visit('https://stacksinfo.web.app');
@@ -124,7 +120,7 @@ describe('Verify that each stack checkbox filter companies based technologies it
  
 }) 
 
-describe('Verify that each stack', () => {
+describe('Verify that each stack display its options', () => {
   beforeEach(() => {
     cy.visit('https://stacksinfo.web.app');
     cy.get('.filter-button').click();
@@ -140,7 +136,6 @@ describe('Verify that each stack', () => {
   }
 })
   
-
 describe('Verify that selecting combinations of technologies display right companies number -testing with OR logic for backend-', () => {
   beforeEach(() => {
       cy.visit('https://stacksinfo.web.app');
@@ -185,7 +180,6 @@ describe('Verify that selecting combinations of technologies display right compa
     cy.get('.card').should('have.length', 2)
 })
 })
-
 describe('Verify that selecting combinations of same technologies display right companies number -testing with OR logic for DBA-', () => {
   beforeEach(() => {
       cy.visit('https://stacksinfo.web.app');
@@ -253,7 +247,6 @@ describe('Verify that selecting combinations of same technologies display right 
   });
 
 })
- 
 describe("Verify that selecting combinations of same technologies display right companies number -testing with OR logic for Data Analytics-", () => {
   beforeEach(() => {
     cy.visit("https://stacksinfo.web.app");
@@ -286,7 +279,6 @@ describe("Verify that selecting combinations of same technologies display right 
   });
 
 });
-
 describe("Verify that selecting combinations of same technologies display right companies number -testing with OR logic for ML-DL-", () => {
   beforeEach(() => {
     cy.visit("https://stacksinfo.web.app");
