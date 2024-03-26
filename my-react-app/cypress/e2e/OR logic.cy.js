@@ -3,32 +3,7 @@ describe("Verify that selecting combinations of technologies do not display any 
     cy.visit("https://stacksinfo.web.app");
     cy.get(".filter-button").click();
   });
-  describe("Verify that selecting combinations of technologies do not display any companies -testing with OR logic for UIUX-", () => {
-    beforeEach(() => {
-      cy.get('svg.MuiSvgIcon-root[data-testid="KeyboardArrowDownIcon"]')
-        .eq(8)
-        .click();
-    });
 
-    it("TC-filter-41 - Verify that figma with sketch display no companies", () => {
-      cy.get(".filter-option").get('[for="Figma"]').click();
-      cy.get(".filter-option").get('[for="Sketch"]').click();
-
-      cy.get(".card").should("have.length", 0);
-    });
-    it("TC-filter-42 - Verify that Adobe XD with InVision display no companies", () => {
-      cy.get(".filter-option").get('[for="Adobe XD"]').click();
-      cy.get(".filter-option").get('[for="InVision"]').click();
-
-      cy.get(".card").should("have.length", 0);
-    });
-    it("TC-filter-43 - Verify that Zeplin with Figma display no companies", () => {
-      cy.get(".filter-option").get('[for="Zeplin"]').click();
-      cy.get(".filter-option").get('[for="Figma"]').click();
-
-      cy.get(".card").should("have.length", 0);
-    });
-  });
   describe("Verify that selecting combinations of technologies display right companies number -testing with OR logic for frontend-", () => {
     beforeEach(() => {
       cy.get('svg.MuiSvgIcon-root[data-testid="KeyboardArrowDownIcon"]')
@@ -267,6 +242,32 @@ describe("Verify that selecting combinations of technologies do not display any 
     it("TC-filter-40 - Verify that LangChain with MxNet does not display any company", () => {
       cy.get(".filter-option").get('[for="LangChain"]').click();
       cy.get(".filter-option").get('[for="MxNet"]').click();
+      cy.get(".card").should("have.length", 0);
+    });
+  });
+  describe("Verify that selecting combinations of technologies do not display any companies -testing with OR logic for UIUX-", () => {
+    beforeEach(() => {
+      cy.get('svg.MuiSvgIcon-root[data-testid="KeyboardArrowDownIcon"]')
+        .eq(8)
+        .click();
+    });
+
+    it("TC-filter-41 - Verify that figma with sketch display no companies", () => {
+      cy.get(".filter-option").get('[for="Figma"]').click();
+      cy.get(".filter-option").get('[for="Sketch"]').click();
+
+      cy.get(".card").should("have.length", 0);
+    });
+    it("TC-filter-42 - Verify that Adobe XD with InVision display no companies", () => {
+      cy.get(".filter-option").get('[for="Adobe XD"]').click();
+      cy.get(".filter-option").get('[for="InVision"]').click();
+
+      cy.get(".card").should("have.length", 0);
+    });
+    it("TC-filter-43 - Verify that Zeplin with Figma display no companies", () => {
+      cy.get(".filter-option").get('[for="Zeplin"]').click();
+      cy.get(".filter-option").get('[for="Figma"]').click();
+
       cy.get(".card").should("have.length", 0);
     });
   });
