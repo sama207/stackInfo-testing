@@ -195,7 +195,7 @@ describe('Verify that selecting combinations of same technologies display right 
     cy.get('.filter-option').get('[for="Microsoft SQL Server"]').click()       
     cy.get('.filter-option').get('[for="MySQL"]').click()
     cy.get('.filter-option').get('[for="PostgreSQL"]').click()
-
+ 
     cy.get('.card').should('have.length', 5)
   })
   it('Verify that MySQL with PostgreSQL with Oracle Database display 5 companies', () => { 
@@ -209,6 +209,18 @@ describe('Verify that selecting combinations of same technologies display right 
     cy.get('.filter-option').get('[for="MongoDB"]').click()       
     cy.get('.filter-option').get('[for="MySQL"]').click()
     cy.get('.filter-option').get('[for="PostgreSQL"]').click()
+ 
+    // describe('press backend then c++', () => {
+//   it('c++ checked', () => {
+//     cy.visit('https://stacksinfo.web.app')
+//     cy.get('.filter-button').click()
+//     cy.get('svg.MuiSvgIcon-root[data-testid="KeyboardArrowDownIcon"]').eq(0).click();
+//     cy.get('.filter-option').eq(0).get('[for="C++"]').click()
+//     cy.get('.filter-option').eq(0).get('.PrivateSwitchBase-input').should('have.attr', 'data-indeterminate', 'true');
+//   //ضل نتاكد انو ال
+//   //result length=2 (the companies that provide c++ is 2)  
+//   })
+// })
 
     cy.get('.card').should('have.length', 6)
   })
@@ -216,11 +228,25 @@ describe('Verify that selecting combinations of same technologies display right 
     cy.get('.filter-option').get('[for="Redis"]').click()  
     cy.get('.filter-option').get('[for="PostgreSQL"]').click()
 
+ 
     cy.get('.card').should('have.length', 1)
   })
   it("Verify that MySQL with PostgreSQL with Couchbase display 1 company", () => {
     cy.get(".filter-option").get('[for="PostgreSQL"]').click();
     cy.get(".filter-option").get('[for="Couchbase"]').click();
+ 
+
+    // describe('press backend then c++ test to modify', () => {
+//   it('c++ checked', () => {
+//     cy.visit('https://stacksinfo.web.app')
+//     cy.get('.filter-button').should('contain', 'Show Filters')
+//     cy.get('.filter-button').click()
+//     cy.get('svg.MuiSvgIcon-root[data-testid="KeyboardArrowDownIcon"]').eq(0).click();
+//     cy.get('.filter-option').eq(0).get('[for="C++"]').click()
+//     cy.get('.filter-option').eq(0).get('.PrivateSwitchBase-input').should('have.attr', 'data-indeterminate', 'true');
+//     // Assuming your application sends a response, you can intercept the response using cy.i
+//   })
+// })
 
     cy.get(".card").should("have.length", 1);
   });
