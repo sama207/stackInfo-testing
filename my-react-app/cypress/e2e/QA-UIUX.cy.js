@@ -1,3 +1,5 @@
+//Moved
+
 describe('Verify that selecting combinations of technologies do not display any companies -testing with OR logic for QA-', () => {
     beforeEach(() => {
         cy.visit('https://stacksinfo.web.app');

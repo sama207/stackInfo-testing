@@ -1,3 +1,4 @@
+//Moved 
 describe('Verify that selecting combinations of technologies display right companies number -testing with OR logic for frontend-', () => {
     beforeEach(() => {
         cy.visit('https://stacksinfo.web.app');

@@ -1,3 +1,4 @@
+//Moved
 describe('Testing AND Logic', () => {
     beforeEach(() => {
         cy.visit('https://stacksinfo.web.app');
@@ -5,7 +6,7 @@ describe('Testing AND Logic', () => {
         cy.get('svg.MuiSvgIcon-root[data-testid="KeyboardArrowDownIcon"]').eq(0).click();
     });
 
-    it('Verify that c++ with mySQL display no companies', () => {
+    it('Verify that c++ and mySQL display no companies', () => {
         cy.get('svg.MuiSvgIcon-root[data-testid="KeyboardArrowDownIcon"]').eq(1).click(); 
         cy.get('.filter-option').get('[for="C++"]').click()
         cy.get('.filter-option').get('[for="MySQL"]').click()
@@ -20,13 +21,13 @@ describe('Testing AND Logic', () => {
             cy.get('.card').should('have.length', (2))
          })
     })
-    it('Verify that Django with Ansible display no companies', () => { 
+    it('Verify that Django and Ansible display no companies', () => { 
         cy.get('svg.MuiSvgIcon-root[data-testid="KeyboardArrowDownIcon"]').eq(2).click();
         cy.get('.filter-option').get('[for="Django"]').click()
         cy.get('.filter-option').get('[for="Ansible"]').click()
         cy.get('.card').should('have.length', (2))
     })
-    it('Verify that Laravel with React display no companies', () => {
+    it('Verify that Laravel and React display no companies', () => {
         cy.get('svg.MuiSvgIcon-root[data-testid="KeyboardArrowDownIcon"]').eq(3).click();
         cy.get('.filter-option').get('[for="Laravel"]').click()
         cy.get('.filter-option').get('[for="React"]').click()
